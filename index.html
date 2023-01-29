@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shipping Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="section content columns is-centered">
+            <div class="column is-three-fifths-tablet">
+                <div class="card">
+                    <div class="card-image is-flex is-horizontal-center">
+                        <figure class="image is-128x128">
+                            <img class="icon-img" src="./delivery_truck.png">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <h1 class="is-horizontal-center">Shipping Calculator</h1>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="is-horizontal-center">
+                                <div class="field has-addons">
+                                    <div class="control in">
+                                        <input class="input" type="text" id="weightInput" placeholder="Enter Weight KGS"
+                                            onkeypress="return validate_keydown(event,this)">
+                                    </div>
+                                    <div class="control">
+                                        <button type="submit" class="button is-link" id="calcBtn">
+                                            Calculate
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="help btnValidation">Please enter the items weight in Kilograms</p>
+                            </div>
+                            <div class="checkboxes container is-fluid is-horizontal-center">
+                                <label class="checkbox">
+                                    <input class="radioBtn" type="radio" value="5" name="shipping_radio" checked="checked" onclick="change_shipping_type(5)">
+                                    5 Day
+                                </label>
+                                <label class="checkbox">
+                                    <input class="radioBtn" type="radio" value="3" name="shipping_radio" onclick="change_shipping_type(3)">
+                                    3 Day
+                                </label>
+                                <label class="checkbox">
+                                    <input class="radioBtn" type="radio" value="2" name="shipping_radio" onclick="change_shipping_type(2)">
+                                    2 Day
+                                </label>
+                            </div>
+                            <div class="columns is-centered data-conatiner">
+                                <div class="column is-two-fifths has-text-right">
+                                    <div class="info-area ">
+                                        <p>Weight Entered: </p>
+                                    </div>
+                                    <div class="info-area">
+                                        <p>Est. Arrival Date: </p>
+                                    </div>
+                                    <div class="info-area">
+                                        <p>Total Cost: </p>
+                                    </div>
+                                </div>
+
+                                <div class="column is-two-fifths">
+                                    <div class="info-output">
+                                        <p><span id="totalG">0</span> g. (<span id="totalKgs">0</span> Kgs.)</p>
+                                    </div>
+                                    <div class="info-output">
+                                        <p id="eta"></p>
+                                    </div>
+                                    <div class="info-output">
+                                        <p><strong id=TotalCost></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+</body>
+
+</html>
